@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 
 import com.example.projetmobile.controller.Controller;
@@ -26,11 +27,12 @@ public class SecondActivity extends Activity{
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        //recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView = findViewById(R.id.recycler_view);
         loader = findViewById(R.id.loader_second_activity);
 
         controller = new Controller(this);
         controller.start();
+
         // use this setting to
         // improve performance if you know that changes
         // in content do not change the layout size

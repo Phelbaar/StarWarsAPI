@@ -6,8 +6,7 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface APIData {
-    public static final String ENDPOINT = "https://swapi.co/api/";
 
-    @GET("planets/")
+    @GET("planets")
     Call<RestPlanetResponse> listPlanetId();
 }

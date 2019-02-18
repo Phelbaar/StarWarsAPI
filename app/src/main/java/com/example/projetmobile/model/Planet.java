@@ -10,15 +10,15 @@ public class Planet {
     @SerializedName("name")
     @Expose
     private String name;
-    @SerializedName("rotation_period")
+    /*@SerializedName("rotation_period")
     @Expose
-    private int rotation_period;
+    private Integer rotation_period;
     @SerializedName("orbital_period")
     @Expose
-    private int orbital_period;
+    private Integer orbital_period;
     @SerializedName("diameter")
     @Expose
-    private int diameter;
+    private Integer diameter;
     @SerializedName("climate")
     @Expose
     private String climate;
@@ -30,10 +30,10 @@ public class Planet {
     private String terrain;
     @SerializedName("surface_water")
     @Expose
-    private int surface_water;
+    private Integer surface_water;
     @SerializedName("population")
     @Expose
-    private int population;
+    private Integer population;
     @SerializedName("residents")
     @Expose
     private List<String> residents;
@@ -90,7 +90,7 @@ public class Planet {
         this.url = url;
     }
 
-    public int getOrbital_period() {
+   public int getOrbital_period() {
         return orbital_period;
     }
 
@@ -146,21 +146,23 @@ public class Planet {
         this.population = population;
     }
 
-    public String getName(){
-        return name;
-    }
-
     public int getRotation_period(){
         return rotation_period;
+    }
+
+    public void setRotation_period(int rotation_period){
+        this.rotation_period = rotation_period;
+    }
+*/
+    public String getName(){
+        return name;
     }
 
     public void setName(String name){
         this.name = name;
     }
 
-    public void setRotation_period(int rotation_period){
-        this.rotation_period = rotation_period;
-    }
+
 
     /*---Rajouter des getters et des setters si on veut de nouveaux champs---*/
 

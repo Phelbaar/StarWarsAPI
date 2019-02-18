@@ -3,14 +3,12 @@ package com.example.projetmobile.model;
 import java.util.List;
 
 public class RestPlanetResponse {
-    private List<Planet> results;
-    private String previous;
+    private Integer count;
     private String next;
-    private int count;
+    private String previous;
+    private List<Planet> results;
 
-    public int getCount() {
-        return count;
-    }
+    public Integer getCount() { return count; }
 
     public void setCount(int count) { this.count = count; }
 
