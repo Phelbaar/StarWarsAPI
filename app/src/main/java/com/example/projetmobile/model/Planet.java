@@ -22,13 +22,13 @@ public class Planet {
     @SerializedName("climate")
     @Expose
     private String climate;
-    /*@SerializedName("gravity")
+    @SerializedName("gravity")
     @Expose
     private String gravity;
     @SerializedName("terrain")
     @Expose
     private String terrain;
-    @SerializedName("surface_water")
+ /*   @SerializedName("surface_water")
     @Expose
     private Integer surface_water;
     @SerializedName("population")
@@ -113,7 +113,7 @@ public class Planet {
     public void setClimate(String climate) {
         this.climate = climate;
     }
-    /*
+
     public String getGravity() {
         return gravity;
     }
@@ -129,7 +129,7 @@ public class Planet {
     public void setTerrain(String terrain) {
         this.terrain = terrain;
     }
-
+/*
     public int getSurface_water() {
         return surface_water;
     }

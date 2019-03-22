@@ -15,15 +15,19 @@ public class AdapterDescription extends RecyclerView.Adapter<AdapterDescription.
     private List<Planet> values;
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        //public TextView name;
-        public TextView description;
+        public TextView terrain;
+        public TextView climate;
+        public TextView gravity;
+        public TextView name;
         public View layout;
 
         public ViewHolder(View v){
             super(v);
             layout = v;
-            //name = (TextView) v.findViewById(R.id.cell_planet);
-            description = (TextView) v.findViewById(R.id.cell_planet);
+            name = (TextView) v.findViewById(R.id.cell_name);
+            terrain = (TextView) v.findViewById(R.id.cell_terrain);
+            climate = (TextView) v.findViewById(R.id.cell_climate);
+            gravity = (TextView) v.findViewById(R.id.cell_gravity);
         }
     }
 
@@ -42,7 +46,7 @@ public class AdapterDescription extends RecyclerView.Adapter<AdapterDescription.
     @Override
     public AdapterDescription.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View v = layoutInflater.inflate(R.layout.row_layout, parent, false);
+        View v = layoutInflater.inflate(R.layout.row_layout2, parent, false);
         ViewHolder viewHolder = new ViewHolder(v);
         return viewHolder;
     }
@@ -53,10 +57,14 @@ public class AdapterDescription extends RecyclerView.Adapter<AdapterDescription.
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         Planet planet = values.get(position);
-        //final String name = planet.getName();
         final String climate = planet.getClimate();
-        //holder.name.setText(name);
-        holder.description.setText(climate);
+        final String gravity = planet.getGravity();
+        final String name = planet.getName();
+        final String terrain = planet.getTerrain();
+        holder.name.setText(name);
+        holder.climate.setText(climate);
+        holder.terrain.setText(terrain);
+        holder.gravity.setText(gravity);
     }
 
     // Return the size of your dataset (invoked by the layout manager)

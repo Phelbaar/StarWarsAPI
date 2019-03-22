@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import com.example.projetmobile.AdapterDescription;
 import com.example.projetmobile.R;
 import com.example.projetmobile.controller.Controller;
+import com.example.projetmobile.controller.DetailController;
 import com.example.projetmobile.model.Planet;
 
 import java.util.List;
@@ -29,8 +30,8 @@ public class ThirdActivity extends Activity {
         recyclerView = findViewById(R.id.recycler_view2);
         //loader = findViewById(R.id.loader_second_activity);
 
-        controller = new Controller(this);
-        controller.start2();
+        controller = new DetailController(this);
+        controller.start2(id);
 
         // use this setting to
         // improve performance if you know that changes

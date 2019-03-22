@@ -1,15 +1,13 @@
 package com.example.projetmobile.controller;
 
-import android.app.Activity;
 import android.util.Log;
 
 import com.example.projetmobile.APIData;
-import com.example.projetmobile.view.SecondActivity;
-import com.example.projetmobile.view.ThirdActivity;
 import com.example.projetmobile.model.Planet;
 import com.example.projetmobile.model.RestPlanetResponse;
+import com.example.projetmobile.view.SecondActivity;
+import com.example.projetmobile.view.ThirdActivity;
 import com.google.gson.Gson;
-
 import com.google.gson.GsonBuilder;
 
 import java.util.List;
@@ -20,9 +18,9 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class Controller{
+public class DetailController {
 
-    private SecondActivity secondActivity;
+    private ThirdActivity thirdActivity;
     private int count;
 
     private static Controller controller = null;
@@ -34,14 +32,10 @@ public class Controller{
         return controller;
     }
 
-    public Controller(SecondActivity secondActivity) {
-        this.secondActivity = secondActivity;
-    }
+    public DetailController(ThirdActivity thirdActivity){ this.thirdActivity = thirdActivity;}
 
+    public void start(int id) {
 
-    public void start() {
-
-        secondActivity.showLoader();
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();
@@ -62,8 +56,7 @@ public class Controller{
                 RestPlanetResponse restPlanetResponse = response.body();
                 List<Planet> planetList = restPlanetResponse.getResults();
 
-                secondActivity.showList(planetList);
-                secondActivity.hideLoader();
+                thirdActivity.showList(planetList);
             }
 
             @Override

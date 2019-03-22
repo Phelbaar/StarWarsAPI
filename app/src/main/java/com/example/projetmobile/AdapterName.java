@@ -15,7 +15,7 @@ public class AdapterName extends RecyclerView.Adapter<AdapterName.ViewHolder> {
     private final OnItemClickListener listener;
 
     public interface OnItemClickListener {
-        void onItemClick(Planet item);
+        void onItemClick(Planet item, int position);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
@@ -40,7 +40,8 @@ public class AdapterName extends RecyclerView.Adapter<AdapterName.ViewHolder> {
         notifyItemRemoved(position);
     }
 
-    public AdapterName(List<Planet> mDataset, OnItemClickListener listener) {values = mDataset;
+    public AdapterName(List<Planet> mDataset, OnItemClickListener listener) {
+        values = mDataset;
         this.listener = listener;
     }
 
@@ -63,7 +64,7 @@ public class AdapterName extends RecyclerView.Adapter<AdapterName.ViewHolder> {
         holder.name.setText(name);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
-                listener.onItemClick(planet);
+                listener.onItemClick(planet, position);
             }
         });
         //holder.description.setText(climate);

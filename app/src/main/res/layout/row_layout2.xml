@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="15dp"
+    android:orientation="vertical"
+    android:layout_gravity="center_vertical"
+    >
+
+    <TextView
+        android:id="@+id/cell_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:padding="15dp"
+        android:textAlignment="center"
+        android:textColor="@color/yellow"
+        android:textSize="30sp"></TextView>
+
+    <TextView
+        android:id="@+id/cell_climate"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:padding="15dp"
+        android:textAlignment="center"
+        android:textColor="@color/yellow"
+        android:textSize="30sp"></TextView>
+
+    <TextView
+        android:id="@+id/cell_gravity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:padding="15dp"
+        android:textAlignment="center"
+        android:textColor="@color/yellow"
+        android:textSize="30sp"></TextView>
+
+    <TextView
+        android:id="@+id/cell_terrain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:padding="15dp"
+        android:textAlignment="center"
+        android:textColor="@color/yellow"
+        android:textSize="30sp"></TextView>
+</LinearLayout>
