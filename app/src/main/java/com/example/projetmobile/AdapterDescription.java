@@ -1,5 +1,6 @@
 package com.example.projetmobile;
 
+import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,17 +11,19 @@ import com.example.projetmobile.model.Planet;
 
 import java.util.List;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class AdapterDescription extends RecyclerView.Adapter<AdapterDescription.ViewHolder> {
     private List<Planet> values;
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        public TextView name;
+        //public TextView name;
+        public TextView description;
         public View layout;
 
         public ViewHolder(View v){
             super(v);
             layout = v;
-            name = (TextView) v.findViewById(R.id.cell_planet);
+            //name = (TextView) v.findViewById(R.id.cell_planet);
+            description = (TextView) v.findViewById(R.id.cell_planet);
         }
     }
 
@@ -34,10 +37,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         notifyItemRemoved(position);
     }
 
-    public MyAdapter(List<Planet> mDataset) {values = mDataset;}
+    public AdapterDescription(List<Planet> mDataset) {values = mDataset;}
 
     @Override
-    public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
+    public AdapterDescription.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View v = layoutInflater.inflate(R.layout.row_layout, parent, false);
         ViewHolder viewHolder = new ViewHolder(v);
@@ -49,9 +52,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        Planet selectedPokemon = values.get(position);
-        final String name = selectedPokemon.getName();
-        holder.name.setText(name);
+        Planet planet = values.get(position);
+        //final String name = planet.getName();
+        final String climate = planet.getClimate();
+        //holder.name.setText(name);
+        holder.description.setText(climate);
     }
 
     // Return the size of your dataset (invoked by the layout manager)

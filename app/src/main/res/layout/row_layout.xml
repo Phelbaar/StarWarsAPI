@@ -15,8 +15,22 @@
         android:layout_height="match_parent"
         android:layout_gravity="center_vertical"
         android:padding="15dp"
+        android:textSize="30dp"
         android:textAlignment="center"
         android:textColor="@color/yellow"
-        tools:text="@string/app_name"></TextView>
+        android:onClick="description">
+    </TextView>
+        <!--tools:text="@string/app_name"-->
+<!--
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:padding="15dp"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:textColor="@color/yellow">
+    </TextView>-->
 
 </LinearLayout>

@@ -1,10 +1,11 @@
 package com.example.projetmobile.controller;
 
-import android.support.constraint.ConstraintLayout;
+import android.app.Activity;
 import android.util.Log;
 
 import com.example.projetmobile.APIData;
-import com.example.projetmobile.SecondActivity;
+import com.example.projetmobile.view.SecondActivity;
+import com.example.projetmobile.view.ThirdActivity;
 import com.example.projetmobile.model.Planet;
 import com.example.projetmobile.model.RestPlanetResponse;
 import com.google.gson.Gson;
@@ -22,6 +23,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class Controller{
 
     private SecondActivity secondActivity;
+    private ThirdActivity thirdActivity;
+    private int count;
 
     private static Controller controller = null;
 
@@ -37,8 +40,11 @@ public class Controller{
         this.secondActivity = secondActivity;
     }
 
+    public Controller(ThirdActivity thirdActivity){ this.thirdActivity = thirdActivity;}
+
 
     public void start() {
+
         secondActivity.showLoader();
         Gson gson = new GsonBuilder()
                 .setLenient()
@@ -57,9 +63,10 @@ public class Controller{
         call.enqueue(new Callback<RestPlanetResponse>() {
             @Override
             public void onResponse(Call<RestPlanetResponse> call, Response<RestPlanetResponse> response) {
-                RestPlanetResponse restPokemonResponse = response.body();
-                List<Planet> listPokemon = restPokemonResponse.getResults();
-                secondActivity.showList(listPokemon);
+                RestPlanetResponse restPlanetResponse = response.body();
+                List<Planet> planetList = restPlanetResponse.getResults();
+
+                secondActivity.showList(planetList);
                 secondActivity.hideLoader();
             }
 
@@ -68,26 +75,38 @@ public class Controller{
                 Log.d("Erreur", "API ERROR");
             }
         });
-        /*APIData apiData = new Retrofit.Builder()
-                .baseUrl(APIData.ENDPOINT)
+    }
+
+    public void start2() {
+
+        //secondActivity.showLoader();
+        Gson gson = new GsonBuilder()
+                .setLenient()
+                .create();
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://swapi.co/api/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
-                .build()
-                .create(APIData.class);
+                .build();
+
+        APIData apiData = retrofit.create(APIData.class);
 
 
-        apiData.listPlanetId().enqueue(new retrofit2.Callback<RestPlanetResponse>() {
+        Call<RestPlanetResponse> call = apiData.listPlanetId();
+
+        call.enqueue(new Callback<RestPlanetResponse>() {
             @Override
-            public void onResponse(retrofit2.Call<RestPlanetResponse> call, Response<RestPlanetResponse> response) {
+            public void onResponse(Call<RestPlanetResponse> call, Response<RestPlanetResponse> response) {
                 RestPlanetResponse restPlanetResponse = response.body();
-                List<Planet> listPlanet = restPlanetResponse.getResults();
-                secondActivity.showList(listPlanet);
-                secondActivity.hideLoader();
+                List<Planet> planetList = restPlanetResponse.getResults();
+
+                thirdActivity.showList(planetList);
             }
 
             @Override
             public void onFailure(Call<RestPlanetResponse> call, Throwable t) {
-                Log.d("ERROR", "API ERROR");
+                Log.d("Erreur", "API ERROR");
             }
-        });*/
+        });
     }
 }

@@ -18,11 +18,11 @@ public class Planet {
     private Integer orbital_period;
     @SerializedName("diameter")
     @Expose
-    private Integer diameter;
+    private Integer diameter;*/
     @SerializedName("climate")
     @Expose
     private String climate;
-    @SerializedName("gravity")
+    /*@SerializedName("gravity")
     @Expose
     private String gravity;
     @SerializedName("terrain")
@@ -104,7 +104,7 @@ public class Planet {
 
     public void setDiameter(int diameter) {
         this.diameter = diameter;
-    }
+    }*/
 
     public String getClimate() {
         return climate;
@@ -113,7 +113,7 @@ public class Planet {
     public void setClimate(String climate) {
         this.climate = climate;
     }
-
+    /*
     public String getGravity() {
         return gravity;
     }
@@ -152,8 +152,7 @@ public class Planet {
 
     public void setRotation_period(int rotation_period){
         this.rotation_period = rotation_period;
-    }
-*/
+    }*/
     public String getName(){
         return name;
     }

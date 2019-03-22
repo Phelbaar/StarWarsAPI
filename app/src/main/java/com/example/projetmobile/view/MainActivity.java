@@ -1,4 +1,4 @@
-package com.example.projetmobile;
+package com.example.projetmobile.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,8 +8,14 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.ProgressBar;
+
+import com.example.projetmobile.R;
+import com.example.projetmobile.view.SecondActivity;
 
 public class MainActivity extends AppCompatActivity {
+
+    private ProgressBar loader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
