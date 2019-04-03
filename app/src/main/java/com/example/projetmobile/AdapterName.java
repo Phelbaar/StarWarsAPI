@@ -20,7 +20,6 @@ public class AdapterName extends RecyclerView.Adapter<AdapterName.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         public TextView name;
-        //public TextView description;
         public View layout;
 
         public ViewHolder(View v){

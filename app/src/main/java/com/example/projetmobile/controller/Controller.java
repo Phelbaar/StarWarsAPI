@@ -42,6 +42,7 @@ public class Controller{
     public void start() {
 
         secondActivity.showLoader();
+
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();

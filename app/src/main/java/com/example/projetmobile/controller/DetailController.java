@@ -3,7 +3,9 @@ package com.example.projetmobile.controller;
 import android.util.Log;
 
 import com.example.projetmobile.APIData;
+import com.example.projetmobile.model.Description;
 import com.example.projetmobile.model.Planet;
+import com.example.projetmobile.model.RestDescriptionResponse;
 import com.example.projetmobile.model.RestPlanetResponse;
 import com.example.projetmobile.view.SecondActivity;
 import com.example.projetmobile.view.ThirdActivity;
@@ -48,19 +50,19 @@ public class DetailController {
         APIData apiData = retrofit.create(APIData.class);
 
 
-        Call<RestPlanetResponse> call = apiData.listPlanetId();
+        Call<RestDescriptionResponse> call = apiData.getPlanetById(id);
 
-        call.enqueue(new Callback<RestPlanetResponse>() {
+        call.enqueue(new Callback<RestDescriptionResponse>() {
             @Override
-            public void onResponse(Call<RestPlanetResponse> call, Response<RestPlanetResponse> response) {
-                RestPlanetResponse restPlanetResponse = response.body();
-                List<Planet> planetList = restPlanetResponse.getResults();
+            public void onResponse(Call<RestDescriptionResponse> call, Response<RestDescriptionResponse> response) {
+                RestDescriptionResponse restDescriptionResponse = response.body();
+                List<Description> descriptionList = restDescriptionResponse.getResults();
 
-                thirdActivity.showList(planetList);
+                thirdActivity.showList(descriptionList);
             }
 
             @Override
-            public void onFailure(Call<RestPlanetResponse> call, Throwable t) {
+            public void onFailure(Call<RestDescriptionResponse> call, Throwable t) {
                 Log.d("Erreur", "API ERROR");
             }
         });

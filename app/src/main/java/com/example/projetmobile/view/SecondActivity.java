@@ -64,7 +64,7 @@ public class SecondActivity extends Activity{
         // define an adapter
         mAdapter = new AdapterName(list, new AdapterName.OnItemClickListener() {
             @Override
-            public void onItemClick(Planet item, int position) {
+            public void onItemClick(Planet planet, int position) {
                 Intent intent = new Intent(getApplicationContext(), ThirdActivity.class);
                 intent.putExtra("key", position);
                 startActivity(intent);

@@ -7,12 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.projetmobile.model.Description;
 import com.example.projetmobile.model.Planet;
 
 import java.util.List;
 
 public class AdapterDescription extends RecyclerView.Adapter<AdapterDescription.ViewHolder> {
-    private List<Planet> values;
+    private List<Description> values;
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         public TextView terrain;
@@ -30,7 +31,7 @@ public class AdapterDescription extends RecyclerView.Adapter<AdapterDescription.
             gravity = (TextView) v.findViewById(R.id.cell_gravity);
         }
     }
-
+/*
     public void add(int position, Planet planet){
         values.add(position, planet);
         notifyItemInserted(position);
@@ -40,8 +41,8 @@ public class AdapterDescription extends RecyclerView.Adapter<AdapterDescription.
         values.remove(position);
         notifyItemRemoved(position);
     }
-
-    public AdapterDescription(List<Planet> mDataset) {values = mDataset;}
+*/
+    public AdapterDescription(List<Description> mDataset) {values = mDataset;}
 
     @Override
     public AdapterDescription.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
@@ -55,12 +56,16 @@ public class AdapterDescription extends RecyclerView.Adapter<AdapterDescription.
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
         // - get element from your dataset at this position
-        // - replace the contents of the view with that element
-        Planet planet = values.get(position);
-        final String climate = planet.getClimate();
-        final String gravity = planet.getGravity();
-        final String name = planet.getName();
-        final String terrain = planet.getTerrain();
+        // - replace the contents of the view with that element*
+        Description description = values.get(position);
+
+
+
+        //Planet planet = values.get(position);
+        final String climate = description.getClimate();
+        final String gravity = description.getGravity();
+        final String name = description.getName();
+        final String terrain = description.getTerrain();
         holder.name.setText(name);
         holder.climate.setText(climate);
         holder.terrain.setText(terrain);
