@@ -10,6 +10,7 @@ public class Planet {
     @SerializedName("name")
     @Expose
     private String name;
+    private String id;
     /*@SerializedName("rotation_period")
     @Expose
     private Integer rotation_period;
@@ -161,8 +162,13 @@ public class Planet {
         this.name = name;
     }
 
+    public String getId() {
+        return id;
+    }
 
-
+    public void setId(String id) {
+        this.id = id;
+    }
     /*---Rajouter des getters et des setters si on veut de nouveaux champs---*/
 
 }

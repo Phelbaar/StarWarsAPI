@@ -3,6 +3,8 @@ package com.example.projetmobile.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class Description {
 
 
@@ -17,7 +19,7 @@ public class Description {
     private Integer orbital_period;
     @SerializedName("diameter")
     @Expose
-    private Integer diameter;*/
+    private Integer diameter;
     @SerializedName("climate")
     @Expose
     private String climate;
@@ -27,7 +29,7 @@ public class Description {
     @SerializedName("terrain")
     @Expose
     private String terrain;
- /*   @SerializedName("surface_water")
+    @SerializedName("surface_water")
     @Expose
     private Integer surface_water;
     @SerializedName("population")
@@ -103,7 +105,7 @@ public class Description {
 
     public void setDiameter(int diameter) {
         this.diameter = diameter;
-    }*/
+    }
 
     public String getClimate() {
         return climate;
@@ -128,30 +130,30 @@ public class Description {
     public void setTerrain(String terrain) {
         this.terrain = terrain;
     }
-    /*
-        public int getSurface_water() {
-            return surface_water;
-        }
 
-        public void setSurface_water(int surface_water) {
-            this.surface_water = surface_water;
-        }
+    public int getSurface_water() {
+        return surface_water;
+    }
 
-        public int getPopulation() {
-            return population;
-        }
+    public void setSurface_water(int surface_water) {
+        this.surface_water = surface_water;
+    }
 
-        public void setPopulation(int population) {
-            this.population = population;
-        }
+    public int getPopulation() {
+        return population;
+    }
 
-        public int getRotation_period(){
-            return rotation_period;
-        }
+    public void setPopulation(int population) {
+        this.population = population;
+    }
 
-        public void setRotation_period(int rotation_period){
-            this.rotation_period = rotation_period;
-        }*/
+    public int getRotation_period(){
+        return rotation_period;
+    }
+
+    public void setRotation_period(int rotation_period){
+        this.rotation_period = rotation_period;
+    }*/
     public String getName(){
         return name;
     }

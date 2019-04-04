@@ -1,15 +1,13 @@
 package com.example.projetmobile.controller;
 
-import android.app.Activity;
 import android.util.Log;
 
-import com.example.projetmobile.APIData;
-import com.example.projetmobile.view.SecondActivity;
-import com.example.projetmobile.view.ThirdActivity;
+import com.example.projetmobile.APIPlanets;
 import com.example.projetmobile.model.Planet;
 import com.example.projetmobile.model.RestPlanetResponse;
+import com.example.projetmobile.view.SecondActivity;
+import com.example.projetmobile.view.ThirdActivity;
 import com.google.gson.Gson;
-
 import com.google.gson.GsonBuilder;
 
 import java.util.List;
@@ -23,6 +21,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class Controller{
 
     private SecondActivity secondActivity;
+    private ThirdActivity thirdActivity;
     private int count;
 
     private static Controller controller = null;
@@ -36,6 +35,12 @@ public class Controller{
 
     public Controller(SecondActivity secondActivity) {
         this.secondActivity = secondActivity;
+        this.thirdActivity = null;
+    }
+
+    public Controller(ThirdActivity thirdActivity) {
+        this.secondActivity = null;
+        this.thirdActivity = thirdActivity;
     }
 
 
@@ -52,10 +57,10 @@ public class Controller{
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 
-        APIData apiData = retrofit.create(APIData.class);
+        APIPlanets apiPlanets = retrofit.create(APIPlanets.class);
 
 
-        Call<RestPlanetResponse> call = apiData.listPlanetId();
+        Call<RestPlanetResponse> call = apiPlanets.listPlanetId();
 
         call.enqueue(new Callback<RestPlanetResponse>() {
             @Override
@@ -73,4 +78,11 @@ public class Controller{
             }
         });
     }
+
+    /*public String getPlanet(){
+        final String planetName = thirdActivity.getIntent().getStringExtra("name");
+
+        thirdActivity.showList();
+        return planetName;
+    }*/
 }

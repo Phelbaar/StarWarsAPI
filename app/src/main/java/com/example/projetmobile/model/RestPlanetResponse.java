@@ -32,7 +32,5 @@ public class RestPlanetResponse {
         return results;
     }
 
-    public void setResults(List<Planet> results) {
-        this.results = results;
-    }
+    public void setResults(List<Planet> results) { this.results = results; }
 }

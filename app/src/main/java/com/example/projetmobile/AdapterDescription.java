@@ -9,11 +9,12 @@ import android.widget.TextView;
 
 import com.example.projetmobile.model.Description;
 import com.example.projetmobile.model.Planet;
+import com.example.projetmobile.model.RestPlanetResponse;
 
 import java.util.List;
 
 public class AdapterDescription extends RecyclerView.Adapter<AdapterDescription.ViewHolder> {
-    private List<Description> values;
+    private List<Planet> values;
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         public TextView terrain;
@@ -25,10 +26,10 @@ public class AdapterDescription extends RecyclerView.Adapter<AdapterDescription.
         public ViewHolder(View v){
             super(v);
             layout = v;
-            name = (TextView) v.findViewById(R.id.cell_name);
-            terrain = (TextView) v.findViewById(R.id.cell_terrain);
-            climate = (TextView) v.findViewById(R.id.cell_climate);
-            gravity = (TextView) v.findViewById(R.id.cell_gravity);
+            name = (TextView) v.findViewById(R.id.name);
+            terrain = (TextView) v.findViewById(R.id.terrain);
+            climate = (TextView) v.findViewById(R.id.climate);
+            gravity = (TextView) v.findViewById(R.id.gravity);
         }
     }
 /*
@@ -42,7 +43,7 @@ public class AdapterDescription extends RecyclerView.Adapter<AdapterDescription.
         notifyItemRemoved(position);
     }
 */
-    public AdapterDescription(List<Description> mDataset) {values = mDataset;}
+    public AdapterDescription(List<Planet> mDataset) {values = mDataset;}
 
     @Override
     public AdapterDescription.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
@@ -56,20 +57,20 @@ public class AdapterDescription extends RecyclerView.Adapter<AdapterDescription.
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
         // - get element from your dataset at this position
-        // - replace the contents of the view with that element*
-        Description description = values.get(position);
+        // - replace the contents of the view with that element
+        Planet planet = values.get(position);
 
 
 
         //Planet planet = values.get(position);
-        final String climate = description.getClimate();
-        final String gravity = description.getGravity();
-        final String name = description.getName();
-        final String terrain = description.getTerrain();
+        //final String climate = description.getClimate();
+        //final String gravity = description.getGravity();
+        final String name = planet.getName();
+        //final String terrain = description.getTerrain();
         holder.name.setText(name);
-        holder.climate.setText(climate);
-        holder.terrain.setText(terrain);
-        holder.gravity.setText(gravity);
+        //holder.climate.setText(climate);
+        //holder.terrain.setText(terrain);
+        //holder.gravity.setText(gravity);
     }
 
     // Return the size of your dataset (invoked by the layout manager)

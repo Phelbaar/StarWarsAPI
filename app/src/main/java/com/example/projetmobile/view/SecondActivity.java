@@ -1,18 +1,23 @@
 package com.example.projetmobile.view;
 
+import android.accessibilityservice.GestureDescription;
 import android.app.Activity;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.example.projetmobile.AdapterName;
 import com.example.projetmobile.R;
 import com.example.projetmobile.controller.Controller;
 import com.example.projetmobile.model.Planet;
 import com.example.projetmobile.view.ThirdActivity;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.List;
 
@@ -60,17 +65,29 @@ public class SecondActivity extends Activity{
         // use a linear layout manager
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-
         // define an adapter
         mAdapter = new AdapterName(list, new AdapterName.OnItemClickListener() {
             @Override
-            public void onItemClick(Planet planet, int position) {
+            public void onItemClick(Planet planet) {
                 Intent intent = new Intent(getApplicationContext(), ThirdActivity.class);
-                intent.putExtra("key", position);
+                intent.putExtra("jSonDetailPlanet", ObjectToJSon(planet));
                 startActivity(intent);
+
             }
         });
         recyclerView.setAdapter(mAdapter);
     }
+
+    public String ObjectToJSon(Planet planet){
+        String jSonStr = "";
+        ObjectMapper Obj = new ObjectMapper();
+        try {
+            jSonStr = Obj.writeValueAsString(planet);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return jSonStr;
+    }
+
 
 }

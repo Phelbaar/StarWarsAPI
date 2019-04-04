@@ -2,10 +2,8 @@ package com.example.projetmobile.controller;
 
 import android.util.Log;
 
-import com.example.projetmobile.APIData;
-import com.example.projetmobile.model.Description;
+import com.example.projetmobile.APIPlanets;
 import com.example.projetmobile.model.Planet;
-import com.example.projetmobile.model.RestDescriptionResponse;
 import com.example.projetmobile.model.RestPlanetResponse;
 import com.example.projetmobile.view.SecondActivity;
 import com.example.projetmobile.view.ThirdActivity;
@@ -22,21 +20,24 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class DetailController {
 
+    private SecondActivity secondActivity;
     private ThirdActivity thirdActivity;
     private int count;
 
-    private static Controller controller = null;
+    private static DetailController detailController = null;
 
-    public static Controller getInstance(SecondActivity secondActivity){
-        if(controller == null){
-            controller = new Controller(secondActivity);
+    public static DetailController getInstance(ThirdActivity thirdActivity){
+        if(detailController == null){
+            detailController = new DetailController(thirdActivity);
         }
-        return controller;
+        return detailController;
     }
 
     public DetailController(ThirdActivity thirdActivity){ this.thirdActivity = thirdActivity;}
 
-    public void start(int id) {
+    public void start() {
+        final String name = secondActivity.getIntent().getStringExtra("name");
+
 
         Gson gson = new GsonBuilder()
                 .setLenient()
@@ -47,24 +48,25 @@ public class DetailController {
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 
-        APIData apiData = retrofit.create(APIData.class);
+        APIPlanets apiPlanets = retrofit.create(APIPlanets.class);
 
+        Call<RestPlanetResponse> call = apiPlanets.listPlanetId();
 
-        Call<RestDescriptionResponse> call = apiData.getPlanetById(id);
+        call.enqueue(new Callback<RestPlanetResponse>() {
 
-        call.enqueue(new Callback<RestDescriptionResponse>() {
             @Override
-            public void onResponse(Call<RestDescriptionResponse> call, Response<RestDescriptionResponse> response) {
-                RestDescriptionResponse restDescriptionResponse = response.body();
-                List<Description> descriptionList = restDescriptionResponse.getResults();
+            public void onResponse(Call<RestPlanetResponse> call, Response<RestPlanetResponse> response) {
+                RestPlanetResponse restPlanetResponse = response.body();
+                List<Planet> descriptionList = restPlanetResponse.getResults();
 
-                thirdActivity.showList(descriptionList);
+                //thirdActivity.showList(descriptionList);
             }
 
             @Override
-            public void onFailure(Call<RestDescriptionResponse> call, Throwable t) {
+            public void onFailure(Call<RestPlanetResponse> call, Throwable t) {
                 Log.d("Erreur", "API ERROR");
             }
         });
     }
+
 }
