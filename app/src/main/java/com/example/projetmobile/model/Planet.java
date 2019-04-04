@@ -10,16 +10,15 @@ public class Planet {
     @SerializedName("name")
     @Expose
     private String name;
-    private String id;
-    /*@SerializedName("rotation_period")
+    @SerializedName("rotation_period")
     @Expose
-    private Integer rotation_period;
+    private String rotation_period;
     @SerializedName("orbital_period")
     @Expose
-    private Integer orbital_period;
+    private String orbital_period;
     @SerializedName("diameter")
     @Expose
-    private Integer diameter;*/
+    private String diameter;
     @SerializedName("climate")
     @Expose
     private String climate;
@@ -29,12 +28,12 @@ public class Planet {
     @SerializedName("terrain")
     @Expose
     private String terrain;
- /*   @SerializedName("surface_water")
+    @SerializedName("surface_water")
     @Expose
-    private Integer surface_water;
+    private String surface_water;
     @SerializedName("population")
     @Expose
-    private Integer population;
+    private String population;
     @SerializedName("residents")
     @Expose
     private List<String> residents;
@@ -50,6 +49,78 @@ public class Planet {
     @SerializedName("url")
     @Expose
     private String url;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getRotation_period() {
+        return rotation_period;
+    }
+
+    public void setRotation_period(String rotation_period) {
+        this.rotation_period = rotation_period;
+    }
+
+    public String getOrbital_period() {
+        return orbital_period;
+    }
+
+    public void setOrbital_period(String orbital_period) {
+        this.orbital_period = orbital_period;
+    }
+
+    public String getDiameter() {
+        return diameter;
+    }
+
+    public void setDiameter(String diameter) {
+        this.diameter = diameter;
+    }
+
+    public String getClimate() {
+        return climate;
+    }
+
+    public void setClimate(String climate) {
+        this.climate = climate;
+    }
+
+    public String getGravity() {
+        return gravity;
+    }
+
+    public void setGravity(String gravity) {
+        this.gravity = gravity;
+    }
+
+    public String getTerrain() {
+        return terrain;
+    }
+
+    public void setTerrain(String terrain) {
+        this.terrain = terrain;
+    }
+
+    public String getSurface_water() {
+        return surface_water;
+    }
+
+    public void setSurface_water(String surface_water) {
+        this.surface_water = surface_water;
+    }
+
+    public String getPopulation() {
+        return population;
+    }
+
+    public void setPopulation(String population) {
+        this.population = population;
+    }
 
     public List<String> getResidents() {
         return residents;
@@ -91,84 +162,6 @@ public class Planet {
         this.url = url;
     }
 
-   public int getOrbital_period() {
-        return orbital_period;
-    }
-
-    public void setOrbital_period(int orbital_period) {
-        this.orbital_period = orbital_period;
-    }
-
-    public int getDiameter() {
-        return diameter;
-    }
-
-    public void setDiameter(int diameter) {
-        this.diameter = diameter;
-    }*/
-
-    public String getClimate() {
-        return climate;
-    }
-
-    public void setClimate(String climate) {
-        this.climate = climate;
-    }
-
-    public String getGravity() {
-        return gravity;
-    }
-
-    public void setGravity(String gravity) {
-        this.gravity = gravity;
-    }
-
-    public String getTerrain() {
-        return terrain;
-    }
-
-    public void setTerrain(String terrain) {
-        this.terrain = terrain;
-    }
-/*
-    public int getSurface_water() {
-        return surface_water;
-    }
-
-    public void setSurface_water(int surface_water) {
-        this.surface_water = surface_water;
-    }
-
-    public int getPopulation() {
-        return population;
-    }
-
-    public void setPopulation(int population) {
-        this.population = population;
-    }
-
-    public int getRotation_period(){
-        return rotation_period;
-    }
-
-    public void setRotation_period(int rotation_period){
-        this.rotation_period = rotation_period;
-    }*/
-    public String getName(){
-        return name;
-    }
-
-    public void setName(String name){
-        this.name = name;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
     /*---Rajouter des getters et des setters si on veut de nouveaux champs---*/
 
 }

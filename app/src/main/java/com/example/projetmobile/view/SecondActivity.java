@@ -83,7 +83,7 @@ public class SecondActivity extends Activity{
         ObjectMapper Obj = new ObjectMapper();
         try {
             jSonStr = Obj.writeValueAsString(planet);
-            Toast.makeText(getApplicationContext(), jSonStr, Toast.LENGTH_LONG).show();
+            //Toast.makeText(getApplicationContext(), jSonStr, Toast.LENGTH_LONG).show();
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
