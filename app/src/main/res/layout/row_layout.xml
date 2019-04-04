@@ -17,6 +17,6 @@
         android:padding="15dp"
         android:textAlignment="center"
         android:textColor="@color/yellow"
-        android:textSize="30sp"></TextView>
+        android:textSize="30sp" />
 
 </LinearLayout>

@@ -3,21 +3,15 @@ package com.example.projetmobile.view;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.projetmobile.AdapterDescription;
 import com.example.projetmobile.R;
 import com.example.projetmobile.controller.Controller;
-import com.example.projetmobile.controller.DetailController;
-import com.example.projetmobile.model.Description;
 import com.example.projetmobile.model.Planet;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
-import java.util.List;
 
 public class ThirdActivity extends Activity {
     public TextView terrain;
@@ -29,11 +23,19 @@ public class ThirdActivity extends Activity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
 
+    //private static final String name = "";
+
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+
+
+
+
+        //int id = (int) getIntent().getSerializableExtra("key");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third);
         name = (TextView) findViewById(R.id.name);
@@ -43,6 +45,7 @@ public class ThirdActivity extends Activity {
 
         Intent intent= getIntent();
         String jSonDetail = intent.getStringExtra("jSonDetailPlanet");
+        //Toast.makeText(getApplicationContext(), jSonDetail, Toast.LENGTH_LONG).show();
 
         ObjectMapper obj = new ObjectMapper();
         try {
@@ -51,6 +54,7 @@ public class ThirdActivity extends Activity {
             final String climateStr = planet.getClimate();
             final String gravityStr = planet.getGravity();
             final String nameStr = planet.getName();
+            //Toast.makeText(getApplicationContext(), nameStr, Toast.LENGTH_LONG).show();
             final String terrainStr = planet.getTerrain();
             name.setText(String.valueOf(nameStr));
             climate.setText(climateStr);
