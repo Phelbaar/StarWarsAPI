@@ -75,18 +75,4 @@ public class AdapterName extends RecyclerView.Adapter<AdapterName.ViewHolder> {
         return values.size();
     }
 
-    /*private void checkName(Planet planet){
-        if (planet.getName() == "Alderaan") planet.setId("2");
-        if (planet.getName() == "Yavin IV") planet.setId("3");
-        if (planet.getName() == "Hoth") planet.setId("4");
-        if (planet.getName() == "Dagobah") planet.setId("5");
-        if (planet.getName() == "Bespin") planet.setId("6");
-        if (planet.getName() == "Endor") planet.setId("7");
-        if (planet.getName() == "Naboo") planet.setId("8");
-        if (planet.getName() == "Coruscant") planet.setId("9");
-        if (planet.getName() == "Kamino") planet.setId("10");
-        if (planet.getName() == "Geonosis") planet.setId("11");
-    }*/
-
-
 }
