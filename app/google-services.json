@@ -1,0 +1,35 @@
+{
+  "project_info": {
+    "project_number": "438481852279",
+    "firebase_url": "https://star-wars-planets-5ce27.firebaseio.com",
+    "project_id": "star-wars-planets-5ce27",
+    "storage_bucket": "star-wars-planets-5ce27.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:438481852279:android:f4f2e4b34ef6c0ac",
+        "android_client_info": {
+          "package_name": "com.example.projetmobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnYDI9vCCs31hE4LJi_jTmF-8E08S613U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "438481852279-0jgi02h3q3aj6hf5jhd3rj3spj7g7irt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
