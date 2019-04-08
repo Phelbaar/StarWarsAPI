@@ -1,5 +1,7 @@
 package com.example.projetmobile.view;
 
+import android.util.Log;
+
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
 
