@@ -5,7 +5,8 @@ New Version
 # LE MASNE DE CHERMONT Guénolé
 
 
-## Projet Android semestre 2 : Réalisation d'une application listant les planètes de Star Wars et leurs descriptifs.
+## Projet Android semestre 2 : 
+Réalisation d'une application listant les planètes de Star Wars et leurs descriptifs.
 
 ## Description : 
 
@@ -24,15 +25,15 @@ Cette application affiche les planètes de l'univers de Star Wars et permet d'af
 
 ## Fonctionnalités : 
 
- -### Écran d'accueil
+ ### Écran d'accueil
 
 Le premier écran comporte le nom de l'appli, une toolbar et un bouton start
 
- -### Deuxième écran
+ ### Deuxième écran
 
 Le deuxième écran affiche un loader le temps que l'application se connecte à l'API rest, puis affiche la liste des planètes que récupère Retrofit dans une RecyclerView.
 
- -### Troisième écran
+ ### Troisième écran
 
 Le troisième écran affiche le descriptif de la planète cliquée précédemment : 
   - Nom
