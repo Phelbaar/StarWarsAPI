@@ -1,9 +1,9 @@
 # StarWarsAPI
 New Version
 
-#__________________________________________________________________________
+
 #LE MASNE DE CHERMONT Guénolé
-#__________________________________________________________________________
+
 
 #Projet Android semestre 2 : Réalisation d'une application listant les planètes de Star Wars et leurs descriptifs.
 
