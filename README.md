@@ -5,7 +5,7 @@ New Version
 LE MASNE DE CHERMONT Guénolé
 
 
-#Projet Android semestre 2 : Réalisation d'une application listant les planètes de Star Wars et leurs descriptifs.
+##Projet Android semestre 2 : Réalisation d'une application listant les planètes de Star Wars et leurs descriptifs.
 
 ##Description : 
 
