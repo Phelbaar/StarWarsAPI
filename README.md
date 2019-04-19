@@ -1,12 +1,13 @@
 # StarWarsAPI
 ### LE MASNE DE CHERMONT Guénolé 
 
+    https://github.com/Phelbaar/StarWarsAPI
+
 
 ## Projet Android semestre 2 : 
 
 Réalisation d'une application listant les planètes de Star Wars et leurs descriptifs.
 
-    https://github.com/Phelbaar/StarWarsAPI
 
 
 ## Description : 
